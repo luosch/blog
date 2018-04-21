@@ -4,7 +4,7 @@ tags: [技术]
 ---
 在某个项目中遇到判断字符串相似程度的需求，google 了一下，原来`python`标准库里面没有这样的函数，反而是 PHP 里面有一个`similar_text()`函数，~~果然`PHP` 是世界上最好的编程语言~~
 
-##函数原型
+### 函数原型
 `similar_text` 的原型是这样的
 
 ```php
@@ -13,7 +13,10 @@ int similar_text(string str1, string str2 [, float percent])
 
 他返回的是两个字符串中能匹配的字符数量，如果有第三个参数，就修改第三个参数的值为 [0, 100] 区间的一个浮点数，表示匹配程度
 
-####例子
+
+<!-- more -->
+
+### 例子
 
 ```php
 $number = similar_text('aaaa', 'aaaa', $percent);
@@ -30,7 +33,7 @@ var_dump($number);  // int(6)
 var_dump($percent); // int(86)
 ```
 
-## 原理分析
+### 原理分析
 `similar_text` 代码可以在 [github](https://github.com/php/php-src/blob/master/ext/standard/string.c) 找到，搜索`PHP_FUNCTION(similar_text)` 就可以了
 
 研究了一下发现，主要分为三步：
@@ -134,7 +137,7 @@ PHP_FUNCTION(similar_text)
 }
 ```
 
-## 进行移植
+### 进行移植
 因为前文提到的项目主要是用 python 写的，所以我将 similar_text 这个函数移植到了 python，具体代码如下
 
 ```python
@@ -194,5 +197,5 @@ def similar_text(str1, str2):
 
 也可以在 [github](https://github.com/luosch/similar_text) 上查看
 
-## 参考
+### 参考
 [PHP source code](https://github.com/php/php-src)

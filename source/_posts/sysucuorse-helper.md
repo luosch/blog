@@ -6,7 +6,7 @@ tags: [技术, 生活]
 
 于是把微信订阅号和上学期做的刷课脚本结合一下，中大课程助手（公众号）就完成了
 
-###开发环境
+### 开发环境
 1. 杂牌电脑一台（win 8）
 2. python，使用 flask 框架做后台处理
 3. 笔和纸
@@ -14,12 +14,14 @@ tags: [技术, 生活]
 ###微信公众号申请
 去[微信公众平台](http://mp.weixin.qq.com)提交订阅号的申请（还要交身份证照片，怕怕的）
 
-###原理
+<!-- more -->
+
+### 原理
 发张公众号原理图
 ![](/resource/12.jpg)
 我们的后台都是处理微信服务器转发的请求
 
-###认证
+### 认证
 开发者提交信息后，微信服务器将发送GET请求到填写的URL上，GET请求携带四个参数：
 
 |  参数         | 描述                       |
@@ -64,7 +66,7 @@ def weixin():
 
 详细的认证方法可以去[开发者文档](http://mp.weixin.qq.com/wiki/home/index.html)了解
 
-###读取课程信息
+### 读取课程信息
 一开始想去旧的教务系统爬信息，发现抓取回来的 html 是空的，需要 js 进行渲染，遂放弃
 
 转战新的[教务系统](http://uems.sysu.edu.cn/elect)，里面的“我的选课结果”就是本学期的课程
@@ -117,7 +119,7 @@ def getCourseList(sid, number):
             courseList[courseIndex]['teacher'] = item.decode("utf-8").encode("gbk")
     return courseList
 ```
-###调试接口
+### 调试接口
 微信的在线调试工具是针对对已经上线的公众号，我写了个简单的调试脚本
 ``` python
 import urllib2, time, parse
@@ -140,9 +142,9 @@ if __name__ == "__main__":
 
         print res.read().decode("utf-8").encode("gbk")
 ```
-###优化
+### 优化
 一开始很傻很天真的使用了 mysql 存储网站信息，结果发现太慢了，于是全部存在文本里面
 代码都放在[github](https://github.com/luosch/sysucourse)上面
 
-###欢迎关注
+### 欢迎关注
 ![](/resource/14.jpg)

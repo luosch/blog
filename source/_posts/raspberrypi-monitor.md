@@ -6,6 +6,8 @@ tags: [技术,生活]
 
 编写的第一个 C code, 用 ssh 连接命令行和 vnc 登录图形化窗口
 
+<!-- more -->
+
 ![](/resource/6.jpg)
 ![](/resource/7.jpg)
 

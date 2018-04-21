@@ -11,6 +11,9 @@ Can you solve it without using extra space?
 
 可以使用快慢指针判断，快指针每次走两步，慢指针每次走一步
 如果有环的话快慢指针一定会相遇，注意判断指针是否为空
+
+<!-- more -->
+
 ``` cpp
 /**
  * Definition for singly-linked list.

@@ -6,7 +6,10 @@ tags: [技术]
 
 
 本博客使用[多说](http://duoshuo.com/ "多说评论系统")评论系统，发现默认主题太丑了，于是动手改了下
-##评论框扁平化
+
+<!-- more -->
+
+### 评论框扁平化
 ``` css
 #ds-reset .ds-comment-body {
 	background: #F7F7F7;
@@ -15,7 +18,7 @@ tags: [技术]
 	border: white 1px solid;
 }
 ```
-##构造评论框左边凹陷效果
+### 构造评论框左边凹陷效果
 ``` css
 #ds-reset .ds-post .ds-avatar {
 	top: 15px;
@@ -36,7 +39,7 @@ tags: [技术]
 	background: #eaeaea;
 }
 ```
-##圆形头像
+### 圆形头像
 ``` css
 #ds-reset .ds-avatar img {
 	width: 32px !important;
@@ -54,7 +57,7 @@ tags: [技术]
 	transition:.4s all ease-in-out;
 }
 ```
-##头像旋转效果
+### 头像旋转效果
 ``` css
 .ds-post-self:hover .ds-avatar img {
 	-webkit-transform: rotate(360deg);

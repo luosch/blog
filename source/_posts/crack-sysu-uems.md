@@ -6,14 +6,17 @@ tags: [技术]
 
 本文是关于如何对验证码进行识别，具体抢课的功能代码请点击上面的链接查看
 
-###环境
+
+<!-- more -->
+
+### 环境
 ``` python
 python3      # 编程环境 
 tesseract    # OCR 库
 pytesseract  # tesseract 的 python 接口调用
 ```
 
-###验证码特点
+### 验证码特点
 ![验证码](/resource/15.jpg)
 
 - 宽 68px
@@ -22,11 +25,11 @@ pytesseract  # tesseract 的 python 接口调用
 - 有噪点
 - 字体颜色不一
 
-###思路
+### 思路
 1. 直接用 pytesseract 进行识别的话效果非常差
 2. 对于噪点和颜色不一，采用像素二值化的方法，即将灰度值高的点变为黑色，灰度值低的点变为白色
 
-###具体代码
+### 具体代码
 ``` python
 im = Image.open('code.jpg')
 im = im.convert('L')
@@ -50,7 +53,7 @@ verify_code = pytesseract.image_to_string(im, lang="eng", config="-psm 7").repla
 ![验证码](/resource/15.jpg)
 ![验证码](/resource/16.jpg)
 
-###链接
+### 链接
 
 [tesseract](https://github.com/tesseract-ocr/tesseract)
 

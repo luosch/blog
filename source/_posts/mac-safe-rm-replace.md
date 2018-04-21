@@ -18,6 +18,8 @@ mac 的垃圾箱目录为 ~/.Trash
 因为我是 zsh 用户，所以我通过编辑 ~/.zshrc 下做一个 alias 来替换 rm
 （bash 用户编辑 ~/.bashrc）
 
+<!-- more -->
+
 在 # Example aliases 下面添加
 ``` bash
 # Example aliases

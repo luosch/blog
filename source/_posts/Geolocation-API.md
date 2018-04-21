@@ -20,7 +20,9 @@ Geolocation API 存在于 navigator对象中，只包含3个方法：
 2. watchPosition
 3. clearWatch
 
-##getCurrentPosition()
+
+<!-- more -->
+### getCurrentPosition()
 navigator.geolocation.getCurrentPosition(success_callback, error_callback, options);
 
 参数说明：
@@ -85,7 +87,7 @@ getCurrentPosition() 返回的数据如下:
 | timestamp | The date/time of the response |
 
 
-##baidu_map()
+### baidu_map()
 调用百度地图API, 并把它包装成一个函数
 
 ``` javascript
@@ -123,7 +125,7 @@ function baidu_map(longitude, latitude) {
     }, {enableHighAccuracy: true})
 }
 ```
-##其他方法
+### 其他方法
 watchPosition() - 当用户移动时实时返回地理位置
 
 clearWatch() - 结束 watchPosition()

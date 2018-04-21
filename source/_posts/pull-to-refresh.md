@@ -7,11 +7,13 @@ tags: [技术]
 
 要研究下拉刷新这个功能，首先要了解iOS中的列表视图，绝大部分的iOS app 的列表都是 UITableView，而 UITableView 继承于 UIScrollView，许多的滑动操作都是在 UIScrollView 中进行处理，包括我们的下拉动作，所以有必要仔细研究一下 UIScrollView 这个 UI控件
 
-## 2. UIScrollView
+<!-- more -->
+
+### 2. UIScrollView
 
 UIScrollVie是UIView的一个子类，在要想弄懂 UIScrollView 是怎么工作之前，需要先了解一下 UIView，特别是视图渲染的两个步骤：
 
-### 2.1 光栅化（Rasterization）
+#### 2.1 光栅化（Rasterization）
 在光栅化步骤中，视图不关心自己显示的位置，只专注于绘制自己的content。
 
 ![](/resource/Pull-To-Refresh-1.png)
@@ -59,7 +61,7 @@ contentInset的一个使用场景是，键盘弹出时，会遮挡住很大一�
 
 ![](/resource/Pull-To-Refresh-4.png)
 
-## 3. 组件框架
+### 3. 组件框架
 
 组件框架分为两部分，是动画组件，是组件核心部分，处理下拉和加载动画的逻辑；另一部分是扩展接口，因为UITableView的继承自UIScrollView，所以可以用UIScrollView的扩展来实现下拉刷新的接口
 
@@ -108,7 +110,7 @@ contentInset的一个使用场景是，键盘弹出时，会遮挡住很大一�
 
 上图是1中动画效果的实现代码，只要引入了扩展接口，即UIScrollView+PullToRefresh.h，就可以在tableview中使用添加动画这个接口方法。而加载动画需要调用者去主动停止，也就是代码最后一行的 stopPullToRefreshAnimation 方法
 
-## 4. 实现效果
+### 4. 实现效果
 
 ![](/resource/ptr.gif)
 

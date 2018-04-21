@@ -11,7 +11,9 @@ tags: [技术]
 [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
 ```
 
-##宏
+<!-- more -->
+
+### 宏
 通过一个处理 Hex 值的宏可以生成相应的 UIColor，这种做法耦合度较高，需要每个 view controller 里面都要设置这个宏
 
 ```objective-c
@@ -28,7 +30,7 @@ green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 ```
 
-####例子
+#### 例子
 ```objective-c
 // 白色
 self.view.backgroundColor = UIColorFromRGB(0xffffff)
@@ -38,7 +40,7 @@ self.view.backgroundColor = UIColorFromRGB(0xff0000)
 self.view.backgroundColor = UIColorFromRGBWithAlpha(0xff0000, 0.5)
 ```
 
-##UIColor+HexString
+### UIColor+HexString
 一个耦合度低的做法是: 拓展 UIColor 类，加上`colorWithHexString`方法, 下面是一种`UIColor+HexString`的实现
 
 ```objective-c
@@ -86,7 +88,7 @@ self.view.backgroundColor = UIColorFromRGBWithAlpha(0xff0000, 0.5)
 }
 ```
 
-####例子
+#### 例子
 
 ```objective-c
 // 白色
@@ -94,7 +96,7 @@ self.view.backgroundColor = UIColorFromRGBWithAlpha(0xff0000, 0.5)
 ```
 
 
-##参考
+### 参考
 [UIColor macro with hex values](http://cocoamatic.blogspot.com/2010/07/uicolor-macro-with-hex-values.html)
 
 [UIColor+HexString](https://github.com/kevinrenskers/UIColor-HexString)
