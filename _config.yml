@@ -78,4 +78,6 @@ theme: NexT
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:luosch/luosch.github.io.git
+  branch: master
